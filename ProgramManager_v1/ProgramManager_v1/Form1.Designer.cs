@@ -36,17 +36,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(9, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "LABEL_1";
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(104, 13);
+            this.AddBtn.Location = new System.Drawing.Point(78, 11);
+            this.AddBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(75, 23);
+            this.AddBtn.Size = new System.Drawing.Size(56, 19);
             this.AddBtn.TabIndex = 1;
             this.AddBtn.Text = "Add...";
             this.AddBtn.UseVisualStyleBackColor = true;
@@ -54,9 +56,10 @@
             // 
             // RunBtn
             // 
-            this.RunBtn.Location = new System.Drawing.Point(185, 13);
+            this.RunBtn.Location = new System.Drawing.Point(139, 11);
+            this.RunBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RunBtn.Name = "RunBtn";
-            this.RunBtn.Size = new System.Drawing.Size(75, 23);
+            this.RunBtn.Size = new System.Drawing.Size(56, 19);
             this.RunBtn.TabIndex = 2;
             this.RunBtn.Text = "Run";
             this.RunBtn.UseVisualStyleBackColor = true;
@@ -64,12 +67,13 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.ClientSize = new System.Drawing.Size(212, 206);
             this.Controls.Add(this.RunBtn);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
