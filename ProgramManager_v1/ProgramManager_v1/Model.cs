@@ -30,12 +30,12 @@ namespace ProgramManager_v1
             if (openF.ShowDialog() == DialogResult.OK)
             {
                 path = openF.FileName;
-                string filenameWithoutPath = Path.GetFileName(path);
+             //   string filenameWithoutPath = Path.GetFileName(path);
                 System.IO.StreamReader sr = new System.IO.StreamReader(path);
-                MessageBox.Show(filenameWithoutPath);
+              //  MessageBox.Show(filenameWithoutPath);
                 sr.Close();
 
-                return filenameWithoutPath;
+                return path;
                 //this.Text = openF.FileName; //bar name
                 //Process.Start(path);//Starting the software
             }
