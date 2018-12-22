@@ -21,12 +21,13 @@ namespace Programmanager
        
         public void eventHandler(int action)
         {
-            mw = new MainWindow(); //Inte bra...
+           mw = new MainWindow(); //Inte bra...
             
             if(action == 1)
             {
                 //MessageBox.Show("Test2");
                 String fuck = "test2";
+               
                 mw.ChangeText(fuck);
                 
             }

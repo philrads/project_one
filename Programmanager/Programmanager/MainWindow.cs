@@ -15,23 +15,27 @@ namespace Programmanager
     {
         private GetProgram gp = new GetProgram();
       
+      
         public MainWindow()
         {
             InitializeComponent();
            
         }
         
-        public void ChangeText(string labelName)
+        public void ChangeText(String labelName)
         {
-            label1.Text = labelName;
+           
+            label1.Text = labelName.ToString();
             Console.WriteLine(labelName);
-
+            
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             // MessageBox.Show("Test1");
             //label1.Text = "FFF";
+          //  ChangeText("TESTSTT");
             gp.eventHandler(1);
         }
     }
