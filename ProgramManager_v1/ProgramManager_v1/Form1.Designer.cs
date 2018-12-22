@@ -29,51 +29,50 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.AddBtn = new System.Windows.Forms.Button();
-            this.RunBtn = new System.Windows.Forms.Button();
+            this.AddBtn_1 = new System.Windows.Forms.Button();
+            this.RunBtn_1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(67, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "LABEL_1";
             // 
-            // AddBtn
+            // AddBtn_1
             // 
-            this.AddBtn.Location = new System.Drawing.Point(78, 11);
-            this.AddBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(56, 19);
-            this.AddBtn.TabIndex = 1;
-            this.AddBtn.Text = "Add...";
-            this.AddBtn.UseVisualStyleBackColor = true;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            this.AddBtn_1.Location = new System.Drawing.Point(104, 14);
+            this.AddBtn_1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddBtn_1.Name = "AddBtn_1";
+            this.AddBtn_1.Size = new System.Drawing.Size(75, 23);
+            this.AddBtn_1.TabIndex = 1;
+            this.AddBtn_1.Text = "Add...";
+            this.AddBtn_1.UseVisualStyleBackColor = true;
+            this.AddBtn_1.Click += new System.EventHandler(this.AddBtn_1_Click);
             // 
-            // RunBtn
+            // RunBtn_1
             // 
-            this.RunBtn.Location = new System.Drawing.Point(139, 11);
-            this.RunBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.RunBtn.Name = "RunBtn";
-            this.RunBtn.Size = new System.Drawing.Size(56, 19);
-            this.RunBtn.TabIndex = 2;
-            this.RunBtn.Text = "Run";
-            this.RunBtn.UseVisualStyleBackColor = true;
-            this.RunBtn.Click += new System.EventHandler(this.RunBtn_Click);
+            this.RunBtn_1.Location = new System.Drawing.Point(185, 14);
+            this.RunBtn_1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RunBtn_1.Name = "RunBtn_1";
+            this.RunBtn_1.Size = new System.Drawing.Size(75, 23);
+            this.RunBtn_1.TabIndex = 2;
+            this.RunBtn_1.Text = "Run";
+            this.RunBtn_1.UseVisualStyleBackColor = true;
+            this.RunBtn_1.Click += new System.EventHandler(this.RunBtn_1_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(212, 206);
-            this.Controls.Add(this.RunBtn);
-            this.Controls.Add(this.AddBtn);
+            this.ClientSize = new System.Drawing.Size(283, 254);
+            this.Controls.Add(this.RunBtn_1);
+            this.Controls.Add(this.AddBtn_1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -84,8 +83,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.Button RunBtn;
+        private System.Windows.Forms.Button AddBtn_1;
+        private System.Windows.Forms.Button RunBtn_1;
     }
 }
 
