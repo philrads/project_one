@@ -56,6 +56,13 @@ namespace ProgramManager_v1
             Process.Start(pathP1);
         }
 
+        private void SelRunBtn_Click(object sender, EventArgs e)
+        {
+            string text = listView1.SelectedItems[0].Text;
+            MessageBox.Show(text);
+            Process.Start(text);
+        }
+
         /*private void UserAction(int val)
         {
             if(val == 1)
@@ -83,6 +90,9 @@ namespace ProgramManager_v1
             string filenameWithoutPath = Path.GetFileName(name);
             ListView ListView1 = new ListView();
             MessageBox.Show("AddToList");
+
+            FileInfo fi = new FileInfo(filenameWithoutPath);
+            string fis = fi.Name;
             // label1.Text = name; //ASSÅ VARFÖR FUNKAR DET INTE Vrfr?
 
             //item = new ListViewItem(file.Name, 1);
@@ -91,7 +101,7 @@ namespace ProgramManager_v1
            // List<string> list = new List<string>();
             // list.Insert(x, 5);
            // list.Add(name);
-            listView1.Items.Add(filenameWithoutPath);
+            listView1.Items.Add(fis);
 
             return null;
         }
