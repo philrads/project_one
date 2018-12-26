@@ -15,6 +15,7 @@ namespace ProgramManager_v1
    public class Model
     {
         private Control c;
+        
 
         public Model()
         {
@@ -41,5 +42,28 @@ namespace ProgramManager_v1
             }
             return null;
         }
+
+        public string addToList(string name)
+        {
+            /*Save list into a file, and then load the file to ListView*/
+
+            MessageBox.Show("AddToList");
+            // label1.Text = name; //ASSÅ VARFÖR FUNKAR DET INTE Vrfr?
+            MessageBox.Show(name);
+            //int x = 0;
+            List<string> list2 = new List<string>();
+            list2.Add(name);
+
+           
+
+
+
+            return null;
+        }
+
+
+
+
+
     }
 }

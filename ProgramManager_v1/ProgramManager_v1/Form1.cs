@@ -27,7 +27,7 @@ namespace ProgramManager_v1
              * Remove from List
              * Thumbnails
              * Responsive
-             * 
+             * https://docs.microsoft.com/en-us/dotnet/framework/winforms/advanced/how-to-extract-the-icon-associated-with-a-file-in-windows-forms
              * **/
             m = new Model();
         }
@@ -43,6 +43,8 @@ namespace ProgramManager_v1
             MessageBox.Show(pathP1);
           //  string filenameWithoutPath = Path.GetFileName(path);
             label1.Text = Path.GetFileName(pathP1);
+            AddPic(pathP1);
+            addToListView(pathP1);
             
         }
 
@@ -62,18 +64,38 @@ namespace ProgramManager_v1
             }
         }*/
 
-        public void AddToList(string name)
+        public void AddPic(string name)
         {
-            MessageBox.Show("AddToList");
-            label1.Text = name; //ASSÅ VARFÖR FUNKAR DET INTE 
-            
-           
-            MessageBox.Show(name);
-            //int x = 0;
-            List<int> list = new List<int>();
-            // list.Insert(x, 5);
-            // list.Add(5);
+            try
+            {
+                imageList1 = new ImageList();
+                Icon iconForFile = SystemIcons.WinLogo;
+                Icon icon = System.Drawing.Icon.ExtractAssociatedIcon(name);
+                imageList1.Images.Add(icon);
+
+                pictureBox1.Image = imageList1.Images[0];
+            }catch(Exception e){
+                MessageBox.Show("Error:  " + e); }  
         }
+
+        public string addToListView(string name)
+        {
+            string filenameWithoutPath = Path.GetFileName(name);
+            ListView ListView1 = new ListView();
+            MessageBox.Show("AddToList");
+            // label1.Text = name; //ASSÅ VARFÖR FUNKAR DET INTE Vrfr?
+
+            //item = new ListViewItem(file.Name, 1);
+           // MessageBox.Show(name);
+     
+           // List<string> list = new List<string>();
+            // list.Insert(x, 5);
+           // list.Add(name);
+            listView1.Items.Add(filenameWithoutPath);
+
+            return null;
+        }
+
         /*
           public void handleEvent(int action)
         {
