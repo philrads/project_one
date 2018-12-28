@@ -47,9 +47,9 @@ namespace ProgramManager_v1
         {
             /*Save list into a file, and then load the file to ListView*/
 
-            MessageBox.Show("AddToList");
+            //MessageBox.Show("AddToList");
             // label1.Text = name; //ASSÅ VARFÖR FUNKAR DET INTE Vrfr?
-            MessageBox.Show(name);
+           // MessageBox.Show(name);
             //int x = 0;
             List<string> list2 = new List<string>();
             list2.Add(name);

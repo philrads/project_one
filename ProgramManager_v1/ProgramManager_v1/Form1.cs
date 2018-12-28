@@ -21,17 +21,18 @@ namespace ProgramManager_v1
         {
             InitializeComponent();
             listView1.View = View.Details;
-          
-            //MVP pattern maybe?
-            /**
-             * Pattern and modular design
-             * List with all program 0-X
-             * Remove from List
-             * Thumbnails
-             * Responsive
-             * https://docs.microsoft.com/en-us/dotnet/framework/winforms/advanced/how-to-extract-the-icon-associated-with-a-file-in-windows-forms
-             * **/
-            m = new Model();
+            Directory.CreateDirectory("cfg");
+            
+              //MVP pattern maybe?
+              /**
+               * Pattern and modular design
+               * List with all program 0-X
+               * Remove from List
+               * Thumbnails
+               * Responsive
+               * https://docs.microsoft.com/en-us/dotnet/framework/winforms/advanced/how-to-extract-the-icon-associated-with-a-file-in-windows-forms
+               * **/
+              m = new Model();
         }
 
         private void AddBtn_1_Click(object sender, EventArgs e)
@@ -42,32 +43,42 @@ namespace ProgramManager_v1
 
             //UserAction(1);
             pathP1 = (m.openExeFile());
-            MessageBox.Show(pathP1);
-          //  string filenameWithoutPath = Path.GetFileName(path);
-            label1.Text = Path.GetFileName(pathP1);
-            AddPic(pathP1);
-            addToListView(pathP1);
+            // MessageBox.Show(pathP1);
+            //  string filenameWithoutPath = Path.GetFileName(path);
+            if(pathP1 == null){
+
+            }
+            else
+            {
+                label1.Text = Path.GetFileName(pathP1 + " added!");
+                AddPic(pathP1);
+                addToListView(pathP1);
+            }
+                
+           
+           
             
         }
 
-        private void RunBtn_1_Click(object sender, EventArgs e)
-        {
-            //Run program
-            //Bind button to program 1
-            MessageBox.Show("RunBtn");
-            Process.Start(pathP1);
-        }
-
+     
         private void SelRunBtn_Click(object sender, EventArgs e)
         {
-            string text = listView1.SelectedItems[0].SubItems[1].Text;
-            MessageBox.Show(text);
-            Process.Start(text);
+            try
+            {
+                string text = listView1.SelectedItems[0].SubItems[1].Text;
+                MessageBox.Show(text);
+                Process.Start(text);
+            }
+            catch (Exception)
+            {
+                
+            }
+           
         }
 
         private void SaveListBtn_Click(object sender, EventArgs e)
         {
-            using (var tw = new StreamWriter("list.txt"))
+            using (var tw = new StreamWriter("cfg\\list.txt"))
             {
                 foreach (ListViewItem item in listView1.Items)
                 {
@@ -79,7 +90,7 @@ namespace ProgramManager_v1
 
         private void LoadListBtn_Click(object sender, EventArgs e)
         {
-            StreamReader fileRead = new StreamReader("list.txt");
+            StreamReader fileRead = new StreamReader("cfg\\list.txt");
             string line = "";
             while ((line = fileRead.ReadLine()) != null)
             {
@@ -89,6 +100,21 @@ namespace ProgramManager_v1
             }
 
             fileRead.Close();
+        }
+
+        private void delSelBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listView1.Items[0].Selected)
+                {
+                    listView1.Items[0].Remove();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
 
@@ -112,14 +138,21 @@ namespace ProgramManager_v1
 
                 pictureBox1.Image = imageList1.Images[0];
             }catch(Exception e){
-                MessageBox.Show("Error:  " + e); }  
+               // MessageBox.Show("Error:  " + e);
+            }  
         }
 
         public string addToListView(string name)
         {
+            try
+            {
+
+           
             string filenameWithoutPath = Path.GetFileName(name);
+           
+      
             ListView ListView1 = new ListView();
-            MessageBox.Show("AddToList");
+           // MessageBox.Show("AddToList");
 
             FileInfo fi = new FileInfo(filenameWithoutPath);
             string fis = fi.Name;
@@ -134,7 +167,10 @@ namespace ProgramManager_v1
             string[] row = { filenameWithoutPath, name };
             var listViewItem = new ListViewItem(row);
             listView1.Items.Add(listViewItem);
-
+                }
+                catch(Exception e){
+                //MessageBox.Show("Error: " + e);
+            }
             return null;
         }
 
