@@ -16,10 +16,12 @@ namespace ProgramManager_v1
     {
         private Model m;
         private string pathP1, pathP2, pathP3;
+       
         public Form1()
         {
             InitializeComponent();
-
+            listView1.View = View.Details;
+          
             //MVP pattern maybe?
             /**
              * Pattern and modular design
@@ -58,10 +60,38 @@ namespace ProgramManager_v1
 
         private void SelRunBtn_Click(object sender, EventArgs e)
         {
-            string text = listView1.SelectedItems[0].Text;
+            string text = listView1.SelectedItems[0].SubItems[1].Text;
             MessageBox.Show(text);
             Process.Start(text);
         }
+
+        private void SaveListBtn_Click(object sender, EventArgs e)
+        {
+            using (var tw = new StreamWriter("list.txt"))
+            {
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    tw.WriteLine(item.SubItems[0].Text+";"+item.SubItems[1].Text);
+                }
+                tw.Close();
+            }
+        }
+
+        private void LoadListBtn_Click(object sender, EventArgs e)
+        {
+            StreamReader fileRead = new StreamReader("list.txt");
+            string line = "";
+            while ((line = fileRead.ReadLine()) != null)
+            {
+                var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
+                listView1.Items.Add(itemMC);
+
+            }
+
+            fileRead.Close();
+        }
+
+
 
         /*private void UserAction(int val)
         {
@@ -96,12 +126,14 @@ namespace ProgramManager_v1
             // label1.Text = name; //ASSÅ VARFÖR FUNKAR DET INTE Vrfr?
 
             //item = new ListViewItem(file.Name, 1);
-           // MessageBox.Show(name);
-     
-           // List<string> list = new List<string>();
+            // MessageBox.Show(name);
+
+            // List<string> list = new List<string>();
             // list.Insert(x, 5);
-           // list.Add(name);
-            listView1.Items.Add(fis);
+            // list.Add(name);
+            string[] row = { filenameWithoutPath, name };
+            var listViewItem = new ListViewItem(row);
+            listView1.Items.Add(listViewItem);
 
             return null;
         }

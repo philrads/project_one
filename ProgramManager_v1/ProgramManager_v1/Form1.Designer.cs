@@ -34,9 +34,13 @@
             this.AddBtn_1 = new System.Windows.Forms.Button();
             this.RunBtn_1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.FileNameC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FilePathC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SelRunBtn = new System.Windows.Forms.Button();
+            this.SaveListBtn = new System.Windows.Forms.Button();
+            this.LoadListBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,14 +76,27 @@
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.FileNameC,
+            this.FilePathC});
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(16, 47);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(381, 338);
+            this.listView1.Size = new System.Drawing.Size(521, 338);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // FileNameC
+            // 
+            this.FileNameC.Text = "Filename";
+            this.FileNameC.Width = 100;
+            // 
+            // FilePathC
+            // 
+            this.FilePathC.Text = "Filepath";
+            this.FilePathC.Width = 300;
             // 
             // imageList1
             // 
@@ -90,7 +107,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(16, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 30);
             this.pictureBox1.TabIndex = 4;
@@ -98,19 +115,41 @@
             // 
             // SelRunBtn
             // 
-            this.SelRunBtn.Location = new System.Drawing.Point(404, 47);
+            this.SelRunBtn.Location = new System.Drawing.Point(544, 47);
             this.SelRunBtn.Name = "SelRunBtn";
-            this.SelRunBtn.Size = new System.Drawing.Size(112, 40);
+            this.SelRunBtn.Size = new System.Drawing.Size(143, 40);
             this.SelRunBtn.TabIndex = 5;
             this.SelRunBtn.Text = "Run selected";
             this.SelRunBtn.UseVisualStyleBackColor = true;
             this.SelRunBtn.Click += new System.EventHandler(this.SelRunBtn_Click);
             // 
+            // SaveListBtn
+            // 
+            this.SaveListBtn.Location = new System.Drawing.Point(544, 362);
+            this.SaveListBtn.Name = "SaveListBtn";
+            this.SaveListBtn.Size = new System.Drawing.Size(143, 23);
+            this.SaveListBtn.TabIndex = 6;
+            this.SaveListBtn.Text = "Save list";
+            this.SaveListBtn.UseVisualStyleBackColor = true;
+            this.SaveListBtn.Click += new System.EventHandler(this.SaveListBtn_Click);
+            // 
+            // LoadListBtn
+            // 
+            this.LoadListBtn.Location = new System.Drawing.Point(544, 333);
+            this.LoadListBtn.Name = "LoadListBtn";
+            this.LoadListBtn.Size = new System.Drawing.Size(143, 23);
+            this.LoadListBtn.TabIndex = 7;
+            this.LoadListBtn.Text = "Load list";
+            this.LoadListBtn.UseVisualStyleBackColor = true;
+            this.LoadListBtn.Click += new System.EventHandler(this.LoadListBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 390);
+            this.ClientSize = new System.Drawing.Size(707, 390);
+            this.Controls.Add(this.LoadListBtn);
+            this.Controls.Add(this.SaveListBtn);
             this.Controls.Add(this.SelRunBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listView1);
@@ -134,6 +173,10 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button SelRunBtn;
+        private System.Windows.Forms.ColumnHeader FileNameC;
+        private System.Windows.Forms.ColumnHeader FilePathC;
+        private System.Windows.Forms.Button SaveListBtn;
+        private System.Windows.Forms.Button LoadListBtn;
     }
 }
 
