@@ -154,6 +154,8 @@ namespace ProgramManager_v1
         }
 
 
+
+
         /*private void UserAction(int val)
         {
             if(val == 1)
@@ -226,6 +228,45 @@ namespace ProgramManager_v1
             }
             
         }*/
+
+
+        //Menu bar
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Created 2018-12-28 ");
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var tw = new StreamWriter("cfg\\list.txt"))
+            {
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    tw.WriteLine(item.SubItems[0].Text + ";" + item.SubItems[1].Text);
+                }
+                tw.Close();
+            }
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                listView1.Items.Clear();
+                StreamReader fileRead = new StreamReader("cfg\\list.txt");
+                string line = "";
+                while ((line = fileRead.ReadLine()) != null)
+                {
+                    var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
+                    listView1.Items.Add(itemMC);
+
+                }
+
+                fileRead.Close();
+            }
+            catch (Exception o) { MessageBox.Show("Error:  " + o); }
+        }
+
 
     }
 }
