@@ -90,6 +90,7 @@ namespace ProgramManager_v1
 
         private void LoadListBtn_Click(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
             StreamReader fileRead = new StreamReader("cfg\\list.txt");
             string line = "";
             while ((line = fileRead.ReadLine()) != null)
@@ -134,7 +135,23 @@ namespace ProgramManager_v1
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            try { 
+            listView1.Items.Clear();
+            StreamReader fileRead = new StreamReader("cfg\\list.txt");
+            string line = "";
+            while ((line = fileRead.ReadLine()) != null)
+            {
+                var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
+                listView1.Items.Add(itemMC);
 
+            }
+
+            fileRead.Close();
+            }
+            catch (Exception o) { MessageBox.Show("Error:  " + o); }
+        }
 
 
         /*private void UserAction(int val)
@@ -155,8 +172,8 @@ namespace ProgramManager_v1
                 imageList1.Images.Add(icon);
 
                 pictureBox1.Image = imageList1.Images[0];
-            }catch(Exception e){
-               // MessageBox.Show("Error:  " + e);
+            }catch(Exception o){
+               MessageBox.Show("Error:  " + o);
             }  
         }
 
@@ -164,11 +181,8 @@ namespace ProgramManager_v1
         {
             try
             {
-
-           
             string filenameWithoutPath = Path.GetFileName(name);
            
-      
             ListView ListView1 = new ListView();
            // MessageBox.Show("AddToList");
 

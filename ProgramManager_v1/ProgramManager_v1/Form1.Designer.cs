@@ -48,19 +48,20 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(58, 13);
+            this.label1.Location = new System.Drawing.Point(44, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 28);
+            this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "PLACEHOLDER TEXT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddBtn_1
             // 
-            this.AddBtn_1.Location = new System.Drawing.Point(439, 13);
-            this.AddBtn_1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddBtn_1.Location = new System.Drawing.Point(329, 16);
+            this.AddBtn_1.Margin = new System.Windows.Forms.Padding(2);
             this.AddBtn_1.Name = "AddBtn_1";
-            this.AddBtn_1.Size = new System.Drawing.Size(138, 28);
+            this.AddBtn_1.Size = new System.Drawing.Size(104, 23);
             this.AddBtn_1.TabIndex = 1;
             this.AddBtn_1.Text = "Add program...";
             this.AddBtn_1.UseVisualStyleBackColor = true;
@@ -72,10 +73,9 @@
             this.FileNameC,
             this.FilePathC});
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(16, 47);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
+            this.listView1.Location = new System.Drawing.Point(12, 43);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(561, 338);
+            this.listView1.Size = new System.Drawing.Size(422, 275);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -98,19 +98,19 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 28);
+            this.pictureBox1.Size = new System.Drawing.Size(26, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // SelRunBtn
             // 
-            this.SelRunBtn.Location = new System.Drawing.Point(584, 47);
+            this.SelRunBtn.Location = new System.Drawing.Point(438, 43);
+            this.SelRunBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SelRunBtn.Name = "SelRunBtn";
-            this.SelRunBtn.Size = new System.Drawing.Size(143, 40);
+            this.SelRunBtn.Size = new System.Drawing.Size(107, 32);
             this.SelRunBtn.TabIndex = 5;
             this.SelRunBtn.Text = "Run selected";
             this.SelRunBtn.UseVisualStyleBackColor = true;
@@ -118,9 +118,10 @@
             // 
             // SaveListBtn
             // 
-            this.SaveListBtn.Location = new System.Drawing.Point(584, 362);
+            this.SaveListBtn.Location = new System.Drawing.Point(438, 299);
+            this.SaveListBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SaveListBtn.Name = "SaveListBtn";
-            this.SaveListBtn.Size = new System.Drawing.Size(143, 23);
+            this.SaveListBtn.Size = new System.Drawing.Size(107, 19);
             this.SaveListBtn.TabIndex = 6;
             this.SaveListBtn.Text = "Save list";
             this.SaveListBtn.UseVisualStyleBackColor = true;
@@ -128,9 +129,10 @@
             // 
             // LoadListBtn
             // 
-            this.LoadListBtn.Location = new System.Drawing.Point(584, 333);
+            this.LoadListBtn.Location = new System.Drawing.Point(438, 276);
+            this.LoadListBtn.Margin = new System.Windows.Forms.Padding(2);
             this.LoadListBtn.Name = "LoadListBtn";
-            this.LoadListBtn.Size = new System.Drawing.Size(143, 23);
+            this.LoadListBtn.Size = new System.Drawing.Size(107, 19);
             this.LoadListBtn.TabIndex = 7;
             this.LoadListBtn.Text = "Load list";
             this.LoadListBtn.UseVisualStyleBackColor = true;
@@ -138,9 +140,10 @@
             // 
             // DelSelBtn
             // 
-            this.DelSelBtn.Location = new System.Drawing.Point(584, 93);
+            this.DelSelBtn.Location = new System.Drawing.Point(438, 81);
+            this.DelSelBtn.Margin = new System.Windows.Forms.Padding(2);
             this.DelSelBtn.Name = "DelSelBtn";
-            this.DelSelBtn.Size = new System.Drawing.Size(143, 40);
+            this.DelSelBtn.Size = new System.Drawing.Size(107, 32);
             this.DelSelBtn.TabIndex = 8;
             this.DelSelBtn.Text = "Delete selected";
             this.DelSelBtn.UseVisualStyleBackColor = true;
@@ -148,9 +151,10 @@
             // 
             // ClearBtn
             // 
-            this.ClearBtn.Location = new System.Drawing.Point(584, 163);
+            this.ClearBtn.Location = new System.Drawing.Point(438, 137);
+            this.ClearBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ClearBtn.Name = "ClearBtn";
-            this.ClearBtn.Size = new System.Drawing.Size(78, 27);
+            this.ClearBtn.Size = new System.Drawing.Size(58, 22);
             this.ClearBtn.TabIndex = 9;
             this.ClearBtn.Text = "Clear all";
             this.ClearBtn.UseVisualStyleBackColor = true;
@@ -158,9 +162,10 @@
             // 
             // RunAllBtn
             // 
-            this.RunAllBtn.Location = new System.Drawing.Point(584, 196);
+            this.RunAllBtn.Location = new System.Drawing.Point(438, 164);
+            this.RunAllBtn.Margin = new System.Windows.Forms.Padding(2);
             this.RunAllBtn.Name = "RunAllBtn";
-            this.RunAllBtn.Size = new System.Drawing.Size(78, 27);
+            this.RunAllBtn.Size = new System.Drawing.Size(58, 22);
             this.RunAllBtn.TabIndex = 10;
             this.RunAllBtn.Text = "Run all";
             this.RunAllBtn.UseVisualStyleBackColor = true;
@@ -168,9 +173,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 396);
+            this.ClientSize = new System.Drawing.Size(560, 340);
             this.Controls.Add(this.RunAllBtn);
             this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.DelSelBtn);
@@ -183,10 +188,11 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "SoftwareManager [v.1228]";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
