@@ -14,7 +14,7 @@ namespace ProgramManager_v1
 {
    public class Model
     {
-        private Control c;
+        
         
 
         public Model()
@@ -22,7 +22,7 @@ namespace ProgramManager_v1
 
         }
 
-        public string openExeFile()
+        public string OpenExeFile()
         {
             string path = "";
             OpenFileDialog openF = new OpenFileDialog();
@@ -43,7 +43,7 @@ namespace ProgramManager_v1
             return null;
         }
 
-        public string addToList(string name)
+        public string AddToList(string name)
         {
             /*Save list into a file, and then load the file to ListView*/
 

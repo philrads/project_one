@@ -40,17 +40,20 @@
             this.SelRunBtn = new System.Windows.Forms.Button();
             this.SaveListBtn = new System.Windows.Forms.Button();
             this.LoadListBtn = new System.Windows.Forms.Button();
-            this.delSelBtn = new System.Windows.Forms.Button();
+            this.DelSelBtn = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
+            this.RunAllBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(58, 18);
+            this.label1.Location = new System.Drawing.Point(58, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 23);
+            this.label1.Size = new System.Drawing.Size(200, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "LABEL_1";
+            this.label1.Text = "PLACEHOLDER TEXT";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AddBtn_1
             // 
@@ -98,7 +101,8 @@
             this.pictureBox1.Location = new System.Drawing.Point(16, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 30);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -132,22 +136,44 @@
             this.LoadListBtn.UseVisualStyleBackColor = true;
             this.LoadListBtn.Click += new System.EventHandler(this.LoadListBtn_Click);
             // 
-            // delSelBtn
+            // DelSelBtn
             // 
-            this.delSelBtn.Location = new System.Drawing.Point(584, 93);
-            this.delSelBtn.Name = "delSelBtn";
-            this.delSelBtn.Size = new System.Drawing.Size(143, 40);
-            this.delSelBtn.TabIndex = 8;
-            this.delSelBtn.Text = "Delete selected";
-            this.delSelBtn.UseVisualStyleBackColor = true;
-            this.delSelBtn.Click += new System.EventHandler(this.delSelBtn_Click);
+            this.DelSelBtn.Location = new System.Drawing.Point(584, 93);
+            this.DelSelBtn.Name = "DelSelBtn";
+            this.DelSelBtn.Size = new System.Drawing.Size(143, 40);
+            this.DelSelBtn.TabIndex = 8;
+            this.DelSelBtn.Text = "Delete selected";
+            this.DelSelBtn.UseVisualStyleBackColor = true;
+            this.DelSelBtn.Click += new System.EventHandler(this.DelSelBtn_Click);
+            // 
+            // ClearBtn
+            // 
+            this.ClearBtn.Location = new System.Drawing.Point(584, 163);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(78, 27);
+            this.ClearBtn.TabIndex = 9;
+            this.ClearBtn.Text = "Clear all";
+            this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
+            // RunAllBtn
+            // 
+            this.RunAllBtn.Location = new System.Drawing.Point(584, 196);
+            this.RunAllBtn.Name = "RunAllBtn";
+            this.RunAllBtn.Size = new System.Drawing.Size(78, 27);
+            this.RunAllBtn.TabIndex = 10;
+            this.RunAllBtn.Text = "Run all";
+            this.RunAllBtn.UseVisualStyleBackColor = true;
+            this.RunAllBtn.Click += new System.EventHandler(this.RunAllBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 396);
-            this.Controls.Add(this.delSelBtn);
+            this.Controls.Add(this.RunAllBtn);
+            this.Controls.Add(this.ClearBtn);
+            this.Controls.Add(this.DelSelBtn);
             this.Controls.Add(this.LoadListBtn);
             this.Controls.Add(this.SaveListBtn);
             this.Controls.Add(this.SelRunBtn);
@@ -156,6 +182,7 @@
             this.Controls.Add(this.AddBtn_1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -177,7 +204,9 @@
         private System.Windows.Forms.ColumnHeader FilePathC;
         private System.Windows.Forms.Button SaveListBtn;
         private System.Windows.Forms.Button LoadListBtn;
-        private System.Windows.Forms.Button delSelBtn;
+        private System.Windows.Forms.Button DelSelBtn;
+        private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.Button RunAllBtn;
     }
 }
 

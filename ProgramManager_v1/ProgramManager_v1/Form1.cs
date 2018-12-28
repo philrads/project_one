@@ -42,7 +42,7 @@ namespace ProgramManager_v1
             // openExeFile();
 
             //UserAction(1);
-            pathP1 = (m.openExeFile());
+            pathP1 = (m.OpenExeFile());
             // MessageBox.Show(pathP1);
             //  string filenameWithoutPath = Path.GetFileName(path);
             if(pathP1 == null){
@@ -52,7 +52,7 @@ namespace ProgramManager_v1
             {
                 label1.Text = Path.GetFileName(pathP1 + " added!");
                 AddPic(pathP1);
-                addToListView(pathP1);
+                AddToListView(pathP1);
             }
                 
            
@@ -102,20 +102,38 @@ namespace ProgramManager_v1
             fileRead.Close();
         }
 
-        private void delSelBtn_Click(object sender, EventArgs e)
+        private void DelSelBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                if (listView1.Items[0].Selected)
+                foreach (ListViewItem eachItem in listView1.SelectedItems)
                 {
-                    listView1.Items[0].Remove();
+                    listView1.Items.Remove(eachItem);
                 }
             }
             catch (Exception)
             {
 
             }
+           
         }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem items in listView1.Items)
+            {
+                items.Remove();   
+            }
+        }
+
+        private void RunAllBtn_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem items in listView1.Items)
+            {
+                Process.Start(items.SubItems[1].Text);
+            }
+        }
+
 
 
 
@@ -142,7 +160,7 @@ namespace ProgramManager_v1
             }  
         }
 
-        public string addToListView(string name)
+        public string AddToListView(string name)
         {
             try
             {
