@@ -14,13 +14,14 @@ namespace ProgramManager_v1
 {
    public class Model
     {
-        
-        
+       
+        private readonly Form1 f1;
 
-        public Model()
+        public Model(Form1 f1)
         {
-
+            this.f1 = f1;
         }
+
         public string OpenListFile()
         {
             string path = "";
@@ -89,7 +90,31 @@ namespace ProgramManager_v1
         }
 
 
+        public ListViewItem MainListLoad()
+        {
 
+            //Se rad 20
+            //I Form1 finns en Get metod på rad 38
+            //Som returnerar ListView som modellen kan använda
+            //Funkar på samma sätt för allt annat liknande
+            //Om modellen behöver komma åt Form1 Gui saker
+            //Bara gör en Get metod som returnerar det ez
+           
+            ListView lw = f1.GetListView;
+            lw.Items.Clear();
+            StreamReader fileRead = new StreamReader("cfg\\list.txt");
+            string line = "";
+            while ((line = fileRead.ReadLine()) != null)
+            {
+                var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
+                lw.Items.Add(itemMC);
+
+            }
+
+            fileRead.Close();
+
+            return null;
+        }
 
 
     }

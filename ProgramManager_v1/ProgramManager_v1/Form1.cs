@@ -32,9 +32,14 @@ namespace ProgramManager_v1
                * Responsive
                * https://docs.microsoft.com/en-us/dotnet/framework/winforms/advanced/how-to-extract-the-icon-associated-with-a-file-in-windows-forms
                * **/
-              m = new Model();
+              m = new Model(this);
         }
 
+        public ListView GetListView
+        {
+            get { return listView1; }
+        }
+        
         private void AddBtn_1_Click(object sender, EventArgs e)
         {
             //Add program
@@ -86,17 +91,7 @@ namespace ProgramManager_v1
 
         private void LoadListBtn_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
-            StreamReader fileRead = new StreamReader("cfg\\list.txt");
-            string line = "";
-            while ((line = fileRead.ReadLine()) != null)
-            {
-                var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
-                listView1.Items.Add(itemMC);
-
-            }
-
-            fileRead.Close();
+            m.MainListLoad(); //SE RAD 93 I MODEL
         }
 
         private void DelSelBtn_Click(object sender, EventArgs e)
