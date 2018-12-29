@@ -21,7 +21,23 @@ namespace ProgramManager_v1
         {
 
         }
+        public string OpenListFile()
+        {
+            string path = "";
+            OpenFileDialog openF = new OpenFileDialog();
+            openF.Filter = "Text files (.txt)|*.txt";
+            openF.Title = "Open File...";
+            if (openF.ShowDialog() == DialogResult.OK)
+            {
+                path = openF.FileName;
+                System.IO.StreamReader sr = new System.IO.StreamReader(path);
+                sr.Close();
+                return path;
+            }
 
+
+                return null;
+        }
         public string OpenExeFile()
         {
             string path = "";

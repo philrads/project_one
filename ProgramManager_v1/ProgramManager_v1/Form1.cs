@@ -15,7 +15,7 @@ namespace ProgramManager_v1
     public partial class Form1 : Form
     {
         private Model m;
-        private string pathP1, pathP2, pathP3;
+        private string pathP1;
        
         public Form1()
         {
@@ -53,11 +53,7 @@ namespace ProgramManager_v1
                 label1.Text = Path.GetFileName(pathP1 + " added!");
                 AddPic(pathP1);
                 AddToListView(pathP1);
-            }
-                
-           
-           
-            
+            } 
         }
 
      
@@ -152,10 +148,7 @@ namespace ProgramManager_v1
             }
             catch (Exception o) { MessageBox.Show("Error:  " + o); }
         }
-
-
-
-
+        
         /*private void UserAction(int val)
         {
             if(val == 1)
@@ -185,7 +178,7 @@ namespace ProgramManager_v1
             {
             string filenameWithoutPath = Path.GetFileName(name);
            
-            ListView ListView1 = new ListView();
+           // ListView ListView1 = new ListView();
            // MessageBox.Show("AddToList");
 
             FileInfo fi = new FileInfo(filenameWithoutPath);
@@ -202,7 +195,7 @@ namespace ProgramManager_v1
             var listViewItem = new ListViewItem(row);
             listView1.Items.Add(listViewItem);
                 }
-                catch(Exception e){
+                catch(Exception){
                 //MessageBox.Show("Error: " + e);
             }
             return null;
@@ -231,12 +224,12 @@ namespace ProgramManager_v1
 
 
         //Menu bar
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Created 2018-12-28 ");
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var tw = new StreamWriter("cfg\\list.txt"))
             {
@@ -248,7 +241,7 @@ namespace ProgramManager_v1
             }
         }
 
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -267,6 +260,29 @@ namespace ProgramManager_v1
             catch (Exception o) { MessageBox.Show("Error:  " + o); }
         }
 
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            s = m.OpenListFile();
+            listView1.Items.Clear();
+            StreamReader fileRead = new StreamReader(s);
+            string line = "";
+            while ((line = fileRead.ReadLine()) != null)
+            {
+                var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
+                listView1.Items.Add(itemMC);
 
+            }
+
+            fileRead.Close();
+        }
+
+        private void NewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            MessageBox.Show("ny fil namn tror jag här, nuvarande är: "+pathP1);
+        }
+        // m.OpenListFile();
     }
-}
+    }
+
