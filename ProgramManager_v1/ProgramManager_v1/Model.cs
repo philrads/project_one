@@ -70,8 +70,19 @@ namespace ProgramManager_v1
             List<string> list2 = new List<string>();
             list2.Add(name);
 
-           
 
+
+
+
+            //
+           //GAMMELT DRET BTW
+           //
+
+            //    //  ||||
+             // //    ||  ||
+              //      ||  ||
+            //  //    ||  ||
+          //     //   ||||
 
 
             return null;
