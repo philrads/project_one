@@ -77,7 +77,7 @@ namespace ProgramManager_v1
            
         }
 
-        private void SaveListBtn_Click(object sender, EventArgs e)
+     /*   private void SaveListBtn_Click(object sender, EventArgs e) //DÖD
         {
             using (var tw = new StreamWriter("cfg\\list.txt"))
             {
@@ -87,12 +87,12 @@ namespace ProgramManager_v1
                 }
                 tw.Close();
             }
-        }
+        }*/
 
-        private void LoadListBtn_Click(object sender, EventArgs e)
-        {
-            m.MainListLoad(); //SE RAD 93 I MODEL
-        }
+        /*    private void LoadListBtn_Click(object sender, EventArgs e)    //DÖD
+            {
+                m.MainListLoad(); //SE RAD 93 I MODEL
+            } */
 
         private void DelSelBtn_Click(object sender, EventArgs e)
         {
@@ -136,8 +136,7 @@ namespace ProgramManager_v1
             {
                 var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
                 listView1.Items.Add(itemMC);
-
-            }
+         }
 
             fileRead.Close();
             }
@@ -158,9 +157,8 @@ namespace ProgramManager_v1
             {
                 imageList1 = new ImageList();
                 Icon iconForFile = SystemIcons.WinLogo;
-                Icon icon = System.Drawing.Icon.ExtractAssociatedIcon(name);
+                Icon icon = Icon.ExtractAssociatedIcon(name);
                 imageList1.Images.Add(icon);
-
                 pictureBox1.Image = imageList1.Images[0];
             }catch(Exception o){
                MessageBox.Show("Error:  " + o);
@@ -221,55 +219,23 @@ namespace ProgramManager_v1
         //Menu bar
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Created 2018-12-28 ");
+            MessageBox.Show("Created 2018-12-28");
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var tw = new StreamWriter("cfg\\list.txt"))
-            {
-                foreach (ListViewItem item in listView1.Items)
-                {
-                    tw.WriteLine(item.SubItems[0].Text + ";" + item.SubItems[1].Text);
-                }
-                tw.Close();
-            }
+            m.SaveListToFile();
         }
 
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                listView1.Items.Clear();
-                StreamReader fileRead = new StreamReader("cfg\\list.txt");
-                string line = "";
-                while ((line = fileRead.ReadLine()) != null)
-                {
-                    var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
-                    listView1.Items.Add(itemMC);
-
-                }
-
-                fileRead.Close();
-            }
-            catch (Exception o) { MessageBox.Show("Error:  " + o); }
+            m.MainListLoad();
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string s = "";
-            s = m.OpenListFile();
-            listView1.Items.Clear();
-            StreamReader fileRead = new StreamReader(s);
-            string line = "";
-            while ((line = fileRead.ReadLine()) != null)
-            {
-                var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
-                listView1.Items.Add(itemMC);
-
-            }
-
-            fileRead.Close();
+           string s  = m.OpenListFile(); //vet inte om det finns bättre sätt att göra detta
+           m.LoadListFile(s);
         }
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -277,7 +243,7 @@ namespace ProgramManager_v1
             listView1.Items.Clear();
             MessageBox.Show("ny fil namn tror jag här, nuvarande är: "+pathP1);
         }
-        // m.OpenListFile();
+        
     }
     }
 

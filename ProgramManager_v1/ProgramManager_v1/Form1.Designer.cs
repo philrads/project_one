@@ -38,8 +38,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SelRunBtn = new System.Windows.Forms.Button();
-            this.SaveListBtn = new System.Windows.Forms.Button();
-            this.LoadListBtn = new System.Windows.Forms.Button();
             this.DelSelBtn = new System.Windows.Forms.Button();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.RunAllBtn = new System.Windows.Forms.Button();
@@ -132,28 +130,6 @@
             this.SelRunBtn.UseVisualStyleBackColor = true;
             this.SelRunBtn.Click += new System.EventHandler(this.SelRunBtn_Click);
             // 
-            // SaveListBtn
-            // 
-            this.SaveListBtn.Location = new System.Drawing.Point(584, 383);
-            this.SaveListBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SaveListBtn.Name = "SaveListBtn";
-            this.SaveListBtn.Size = new System.Drawing.Size(143, 23);
-            this.SaveListBtn.TabIndex = 6;
-            this.SaveListBtn.Text = "Save list";
-            this.SaveListBtn.UseVisualStyleBackColor = true;
-            this.SaveListBtn.Click += new System.EventHandler(this.SaveListBtn_Click);
-            // 
-            // LoadListBtn
-            // 
-            this.LoadListBtn.Location = new System.Drawing.Point(584, 354);
-            this.LoadListBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LoadListBtn.Name = "LoadListBtn";
-            this.LoadListBtn.Size = new System.Drawing.Size(143, 23);
-            this.LoadListBtn.TabIndex = 7;
-            this.LoadListBtn.Text = "Load list";
-            this.LoadListBtn.UseVisualStyleBackColor = true;
-            this.LoadListBtn.Click += new System.EventHandler(this.LoadListBtn_Click);
-            // 
             // DelSelBtn
             // 
             this.DelSelBtn.Location = new System.Drawing.Point(584, 114);
@@ -221,6 +197,7 @@
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.newToolStripMenuItem.Text = "&New";
+            this.newToolStripMenuItem.ToolTipText = "Create a new list";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
@@ -231,12 +208,13 @@
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.ToolTipText = "Open a list";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(170, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -246,13 +224,15 @@
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.ToolTipText = "Save current list";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             this.loadToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.loadToolStripMenuItem.Text = "&Load";
+            this.loadToolStripMenuItem.Text = "&Load typ";
+            this.loadToolStripMenuItem.ToolTipText = "okänt";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
@@ -312,8 +292,6 @@
             this.Controls.Add(this.RunAllBtn);
             this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.DelSelBtn);
-            this.Controls.Add(this.LoadListBtn);
-            this.Controls.Add(this.SaveListBtn);
             this.Controls.Add(this.SelRunBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listView1);
@@ -346,8 +324,6 @@
         private System.Windows.Forms.Button SelRunBtn;
         private System.Windows.Forms.ColumnHeader FileNameC;
         private System.Windows.Forms.ColumnHeader FilePathC;
-        private System.Windows.Forms.Button SaveListBtn;
-        private System.Windows.Forms.Button LoadListBtn;
         private System.Windows.Forms.Button DelSelBtn;
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Button RunAllBtn;

@@ -31,13 +31,56 @@ namespace ProgramManager_v1
             if (openF.ShowDialog() == DialogResult.OK)
             {
                 path = openF.FileName;
-                System.IO.StreamReader sr = new System.IO.StreamReader(path);
+                StreamReader sr = new StreamReader(path);
                 sr.Close();
                 return path;
             }
-
-
+            else
+            {
                 return null;
+            }
+            
+        }
+        public void SaveListToFile()
+        {
+            using (var tw = new StreamWriter("cfg\\list.txt"))
+            {
+                foreach (ListViewItem item in f1.GetListView.Items)
+                {
+                    tw.WriteLine(item.SubItems[0].Text + ";" + item.SubItems[1].Text);
+                }
+                tw.Close();
+            }
+        }
+
+        public void LoadListFile(string path)
+        {
+            try
+            {
+                if (path == null)
+                {
+                    //Gör inget
+                    return;
+                }
+                else
+                {
+                    f1.GetListView.Items.Clear();
+                    StreamReader fileRead = new StreamReader(path);
+                    string line = "";
+                    while ((line = fileRead.ReadLine()) != null)
+                    {
+                        var itemMC = new ListViewItem(new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[1].ToString() });
+                        f1.GetListView.Items.Add(itemMC);
+
+                    }
+
+                    fileRead.Close();
+                }
+            }
+            catch (Exception)
+            {
+                //Ingenting än...
+            }
         }
         public string OpenExeFile()
         {
@@ -90,7 +133,7 @@ namespace ProgramManager_v1
         }
 
 
-        public ListViewItem MainListLoad()
+        public void MainListLoad()
         {
 
             //Se rad 20
@@ -112,8 +155,7 @@ namespace ProgramManager_v1
             }
 
             fileRead.Close();
-
-            return null;
+            
         }
 
 
