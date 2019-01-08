@@ -26,7 +26,7 @@ namespace ProgramManager_v1
         {
             string path = "";
             OpenFileDialog openF = new OpenFileDialog();
-            openF.Filter = "Text files (.txt)|*.txt";
+            openF.Filter = "SoftwareManager files (.sm)|*.sm";
             openF.Title = "Open File...";
             if (openF.ShowDialog() == DialogResult.OK)
             {
@@ -43,7 +43,7 @@ namespace ProgramManager_v1
         }
         public void SaveListToFile()
         {
-            using (var tw = new StreamWriter("cfg\\list.txt"))
+            using (var tw = new StreamWriter("cfg\\list.sm"))
             {
                 foreach (ListViewItem item in f1.GetListView.Items)
                 {
@@ -86,7 +86,7 @@ namespace ProgramManager_v1
         {
             string path = "";
             OpenFileDialog openF = new OpenFileDialog();
-            openF.Filter = "Executable Flies (.exe)|*.exe";
+            openF.Filter = "Executable Files (.exe)|*.exe";
             openF.Title = "Open File...";
             if (openF.ShowDialog() == DialogResult.OK)
             {
@@ -145,7 +145,7 @@ namespace ProgramManager_v1
            
             ListView lw = f1.GetListView;
             lw.Items.Clear();
-            StreamReader fileRead = new StreamReader("cfg\\list.txt");
+            StreamReader fileRead = new StreamReader("cfg\\list.sm");
             string line = "";
             while ((line = fileRead.ReadLine()) != null)
             {

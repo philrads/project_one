@@ -219,7 +219,7 @@ namespace ProgramManager_v1
         //Menu bar
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Created 2018-12-28");
+            MessageBox.Show("SoftwareManager version 1.19.0108\nDeveloped by Philip G.R. & Erik Ö.");
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
